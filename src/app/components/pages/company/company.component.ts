@@ -48,10 +48,8 @@ export class CompanyComponent implements OnInit {
   searchName() {
     if (this.searchTerm.trim()) {
       // Eğer arama terimi varsa, boşluklar hariç
-      const encodedSearchTerm = encodeURIComponent(this.searchTerm); // Arama terimini encode et
-
       this.companyService
-        .findCompanyByName(encodedSearchTerm)
+        .findCompanyByName(this.searchTerm.trim())
         .pipe(timeout(10000))
         .subscribe(
           (data) => {
