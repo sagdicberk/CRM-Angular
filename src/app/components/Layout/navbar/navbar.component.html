@@ -1,0 +1,13 @@
+<nav class="w-full mt-0 h-full  bg-blue-950 border-r-8 border-blue-700">
+  <ul class="flex flex-col items-center text-center p-5 text-white">
+    <li
+      *ngFor="let item of navItems"
+      class="p-3 w-full border-b-4 border-transparent hover:border-white rounded hover:bg-blue-700"
+    >
+      <a [routerLink]="item.link" class="flex items-center justify-center">
+        <i [class]="item.icon + ' mr-5'"></i>
+        {{ item.label }}
+      </a>
+    </li>
+  </ul>
+</nav>

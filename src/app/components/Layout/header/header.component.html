@@ -1,0 +1,23 @@
+<div class="bg-blue-700 p-4 flex items-center justify-between">
+  <h1 class="text-white text-2xl font-bold">CRM</h1>
+
+  <div class="flex items-center space-x-4 relative mr-6" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+    <i class="fa fa-user text-white"></i>
+    <span *ngIf="username" class="text-white">
+      {{ username }}
+    </span>
+
+    <!-- Dropdown Menü -->
+    <div
+      *ngIf="isDropdownOpen"
+      class="absolute right-0 w-48 bg-white rounded-md shadow-lg py-2 z-10"
+    >
+      <button
+        (click)="onQuit()"
+        class="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200 transition"
+      >
+        Çıkış Yap
+      </button>
+    </div>
+  </div>
+</div>
