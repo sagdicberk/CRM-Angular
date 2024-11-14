@@ -24,7 +24,11 @@ export class HeaderComponent {
           this.username = data.username;
         }
       },
-      error: (e) => console.error(e),
+      error: (e) => {
+        console.error(e);
+        this.onQuit();
+
+      },
       complete: () => console.info('complete'),
     });
   }
