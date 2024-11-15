@@ -11,11 +11,11 @@ import { RouterModule } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   navItems = [
-    { icon: 'fa fa-users', label: 'Müşteriler', link: '/customers' },
-    { icon: 'fa fa-users', label: 'Çalışanlar', link: '/employees' },
+    { icon: 'fa fa-users', label: 'Müşteriler', link: '/home/customers' },
+    { icon: 'fa fa-users', label: 'Çalışanlar', link: '/home/employees' },
     { icon: 'fa fa-building', label: 'Şirketler', link: '/home/companies' },
-    { icon: 'fa fa-eye', label: 'Fırsatlar', link: '/opportunities' },
-    { icon: 'fa fa-list', label: 'Görevler', link: '/tasks' },
+    { icon: 'fa fa-eye', label: 'Fırsatlar', link: '/home/opportunities' },
+    { icon: 'fa fa-list', label: 'Görevler', link: '/home/tasks' },
   ];
 
   constructor() {}

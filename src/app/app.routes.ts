@@ -7,6 +7,10 @@ import { CompanyComponent } from './components/pages/company/company.component';
 import { CreateCompanyComponent } from './components/pages/company/create-company/create-company.component';
 import { UpdateCompanyComponent } from './components/pages/company/update-company/update-company.component';
 import { DeleteCompanyComponent } from './components/pages/company/delete-company/delete-company.component';
+import { CustomerComponent } from './components/pages/customer/customer.component';
+import { CreateCustomerComponent } from './components/pages/customer/create-customer/create-customer.component';
+import { UpdateCustomerComponent } from './components/pages/customer/update-customer/update-customer.component';
+import { DeleteCustomerComponent } from './components/pages/customer/delete-customer/delete-customer.component';
 
 export const routes: Routes = [
   // Redirect to login if no path matches
@@ -37,8 +41,24 @@ export const routes: Routes = [
       },
       {
         path: 'companies/delete/:id', // delete company page
-        component: DeleteCompanyComponent
-      }
+        component: DeleteCompanyComponent,
+      },
+      {
+        path: 'customers',
+        component: CustomerComponent,
+      },
+      {
+        path: 'customers/create',
+        component: CreateCustomerComponent,
+      },
+      {
+        path: 'customers/update/:id', // update company page
+        component: UpdateCustomerComponent,
+      },
+      {
+        path: 'customer/delete/:id',
+        component: DeleteCustomerComponent
+      },
     ],
   },
 ];

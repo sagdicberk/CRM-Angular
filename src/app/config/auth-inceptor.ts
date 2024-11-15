@@ -1,6 +1,7 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { catchError, throwError } from 'rxjs';
 
 export const AuthInterceptorFn: HttpInterceptorFn = (req, next) => {
   const router = inject(Router);
@@ -17,7 +18,15 @@ export const AuthInterceptorFn: HttpInterceptorFn = (req, next) => {
     });
 
     // Proceed with the cloned request
-    return next(clonedReq);
+    return next(clonedReq).pipe(
+      catchError((error) => {
+        if (error.status === 401) {
+          sessionStorage.removeItem('token');
+          router.navigate(['login']);
+        }
+        return throwError(error);
+      })
+    );
   }
 
   // Proceed with the original request if there's no token
